@@ -276,16 +276,40 @@ class Model():
 # Initializes the model, performs quadrant and eighth splits,
 # and visualizes the final cluster arrangement.
 # ============================================================
-def start():
-    """Main execution sequence."""
-    filepath = "./data/data2.csv"
+
+def figure1():
+    filepath = "./sample data/data.csv"
+    root = Model(filepath)
+    root.split_quads()
+    root.weight_quads()
+    root.plot_clusters()
+
+def figure2():
+    filepath = "./sample data/data.csv"
     root = Model(filepath)
     root.split_quads()
     root.weight_quads()
     root.split_eighth(True)
     root.plot_clusters()
-    # root.print_distances()
+
+def figure3():
+    filepath = "./sample data/data2.csv"
+    root = Model(filepath)
+    root.split_quads()
+    root.weight_quads()
+    root.plot_clusters()
+
+def figure4():
+    filepath = "./sample data/data2.csv"
+    root = Model(filepath)
+    root.split_quads()
+    root.weight_quads()
+    root.split_eighth(True)
+    root.plot_clusters()
 
 
 if __name__ == "__main__":
-    start()
+    figure1()
+    figure2()
+    figure3()
+    figure4()
